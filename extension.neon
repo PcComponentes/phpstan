@@ -1,0 +1,17 @@
+includes:
+  - %currentWorkingDirectory%/vendor/phpstan/phpstan-beberlei-assert/extension.neon
+  - %currentWorkingDirectory%/vendor/phpstan/phpstan-symfony/extension.neon
+
+services:
+  -
+    class: PcComponentes\PHPStan\BeberleiAssert\AssertionChainTypeSpecifyingExtension
+    tags:
+      - phpstan.typeSpecifier.methodTypeSpecifyingExtension
+  -
+    class: PcComponentes\PHPStan\BeberleiAssert\LazyAssertionVerifyNowTypeSpecifyingExtension
+    tags:
+      - phpstan.typeSpecifier.methodTypeSpecifyingExtension
+  -
+    class: PcComponentes\PHPStan\BeberleiAssert\LazyAssertionVerifyNowDynamicReturnTypeExtension
+    tags:
+      - phpstan.broker.dynamicMethodReturnTypeExtension
