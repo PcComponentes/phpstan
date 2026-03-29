@@ -25,3 +25,18 @@ includes:
 ```
 
 Keep project-specific configuration such as `level`, `excludePaths`, `ignoreErrors`, and `symfony.containerXmlPath` in the consumer project.
+
+## Development
+
+This repository includes a local PHP environment based on Docker Compose.
+
+```bash
+make start
+```
+
+Useful targets:
+
+- `make composer-install`
+- `make composer-update`
+- `make bash`
+- `make logs`

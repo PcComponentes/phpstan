@@ -1,0 +1,6 @@
+services:
+  php:
+    build: .
+    volumes:
+      - .:/var/app
+      - ~/.composer:/.composer
