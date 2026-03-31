@@ -150,7 +150,7 @@ final class LazyAssertionVerifyNowTypeSpecifyingExtension implements MethodTypeS
             $specifiedTypes = $specifiedTypes->unionWith($currentSpecifiedTypes);
         }
 
-        return $specifiedTypes;
+        return $specifiedTypes->setRootExpr($node);
     }
 
     /** @return list<array{name: string, args: list<Arg>}>|null */

@@ -11,7 +11,3 @@ services:
     class: PcComponentes\PHPStan\BeberleiAssert\LazyAssertionVerifyNowTypeSpecifyingExtension
     tags:
       - phpstan.typeSpecifier.methodTypeSpecifyingExtension
-  -
-    class: PcComponentes\PHPStan\BeberleiAssert\LazyAssertionVerifyNowDynamicReturnTypeExtension
-    tags:
-      - phpstan.broker.dynamicMethodReturnTypeExtension
