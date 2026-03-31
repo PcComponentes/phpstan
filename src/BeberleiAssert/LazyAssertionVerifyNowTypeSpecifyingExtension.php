@@ -107,6 +107,15 @@ final class LazyAssertionVerifyNowTypeSpecifyingExtension implements MethodTypeS
                     $nullOrMode,
                     'base64' !== $operation['name'],
                 );
+
+                if ($allMode) {
+                    // @phpstan-ignore phpstanApi.method
+                    $currentSpecifiedTypes = AssertHelper::handleAll(
+                        $this->typeSpecifier,
+                        $scope,
+                        $currentSpecifiedTypes,
+                    );
+                }
             } elseif ($allMode && $this->isSupportedAllNotAssertion($operation['name'])) {
                 // @phpstan-ignore phpstanApi.method
                 $currentSpecifiedTypes = AssertHelper::handleAllNot(
