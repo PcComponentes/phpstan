@@ -107,6 +107,15 @@ final class AssertionChainTypeSpecifyingExtension implements MethodTypeSpecifyin
                     $nullOrMode,
                     'base64' !== $operation['name'],
                 );
+
+                if ($allMode) {
+                    // @phpstan-ignore phpstanApi.method
+                    $currentSpecifiedTypes = AssertHelper::handleAll(
+                        $this->typeSpecifier,
+                        $scope,
+                        $currentSpecifiedTypes,
+                    );
+                }
             } else {
                 if ($allMode && $this->isSupportedAllNotAssertion($operation['name'])) {
                     // @phpstan-ignore phpstanApi.method
